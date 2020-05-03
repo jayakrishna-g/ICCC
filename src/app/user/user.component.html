@@ -16,12 +16,13 @@
 </mat-card>
 <br>
 <br>
-<mat-card>
+<mat-card *ngIf = 'dataloaded | async'>
     <mat-card-title>
-        {{fact.text}}
+        Random Quote:
     </mat-card-title>
-    <mat-card-subtitle>
+    <h1>{{fact.text}}</h1>
+    <h4>
         By : {{fact.author}}
-    </mat-card-subtitle>
+    </h4>
 </mat-card>
 </mat-card>
