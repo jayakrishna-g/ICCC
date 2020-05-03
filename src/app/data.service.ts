@@ -15,6 +15,6 @@ export class DataService {
   }
 
   getrandomfact() {
-    return this.http.get('http://numbersapi.com/random' , {responseType : 'text'});
+    return this.http.get('https://type.fit/api/quotes');
   }
 }
