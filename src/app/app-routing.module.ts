@@ -6,7 +6,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 const routes: Routes = [
-  {path: '' , component : RatingsComponent},
+  {path: '' , component : UserComponent},
   {path: 'ratings/:query' , component : RatingsComponent},
   {path: 'player' , component : UserComponent},
   {path: 'player/:username' , component : UserDetailsComponent}
