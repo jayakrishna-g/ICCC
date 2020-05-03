@@ -1,0 +1,53 @@
+
+
+
+<mat-card *ngIf = 'dataloaded | async' fxFlexfil>
+    <mat-card-header>
+        <img mat-card-avatar src="https://picsum.photos/200/300?random=1">
+        <mat-card-title>
+            {{user.PersonalDetails.Name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{user.Handle}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+        <mat-list>
+            <h1 mat-line>User Details</h1>
+            <h3 mat-line>
+                    UserName :  {{user.PersonalDetails.Name}}  
+            </h3>
+            <h3 mat-line>
+                    Handle :  {{user.Handle}}  
+            </h3>
+            <h3 mat-line>
+                    College :  {{user.PersonalDetails.College}}  
+            </h3>
+            <h3 mat-line>
+                    Stream :  {{user.PersonalDetails.Stream}}  
+            </h3>
+            <h3 mat-line>
+                    Batch :  {{user.PersonalDetails.YearofStudy}}  
+            </h3>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-content>
+            <h1>Ratings Graph</h1>
+            <div id=chart_div fxFlexfill></div>
+        </mat-card-content>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-content>
+            <h1>Ranks Graph</h1>
+            <div id=chart_div1 fxFlexfill></div>
+        </mat-card-content>
+        <br>
+</mat-card>
+
+<!-- <ng-template #dataloaded>
+    <mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+</ng-template> -->
