@@ -10,7 +10,7 @@ export class UserComponent implements OnInit {
   fact;
   constructor(private data: DataService,public router: Router ) {
     data.getrandomfact().subscribe((res) => {
-      const len = Math.random() * 1000;
+      const len = Math.floor(Math.random() * 1000);
       this.fact = res[len];
     });
   }
