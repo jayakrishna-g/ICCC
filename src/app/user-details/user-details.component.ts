@@ -4,7 +4,7 @@ import { DataService } from '../data.service';
 
 // tslint:disable-next-line: prefer-const
 declare var google: any;
-let user : any;
+let user: any;
 
 @Component({
   selector: 'app-user-details',
@@ -41,33 +41,58 @@ function drawGraphs() {
   ranks.addColumn('number', 'Rank');
   const Ratingrows = [];
   const Rankrows = [];
+  let RMin = 1000000;
+  let RMax = -1000000;
   user.ContestDetails.forEach(item => {
+      // tslint:disable-next-line: radix
+      RMin = Math.min(RMin, parseInt(item.Rating));
+      // tslint:disable-next-line: radix
+      RMax = Math.max(RMax, parseInt(item.Rating));
       // tslint:disable-next-line: radix
       Ratingrows.push([parseInt(item.ContestID) , parseInt(item.Rating)]) ;
       // tslint:disable-next-line: radix
-      Rankrows.push([parseInt(item.ContestID),parseInt(item.Rank)]);
+      Rankrows.push([parseInt(item.ContestID), parseInt(item.Rank)]);
     });
+  RMin -= RMin % 200;
+  RMin = Math.min(RMin, 1200);
+  RMax += 10;
+  RMax += RMax % 200;
   rating.addRows(Ratingrows);
   ranks.addRows(Rankrows);
   const Ratingoptions = {
       hAxis: {
-      title: 'Rating'
+      title: 'ContestID',
+      format: 'decimal',
+      minValue : 1200
       },
       vAxis: {
-      title: 'ContestID'
+      title: 'Rating',
+      format: 'decimal',
+      viewWindow : {
+        min : RMin,
+        max : RMax,
+      }
+      },
+      axes: {
+        x: {
+          0: {side: 'bottom'}
+        }
       }
   };
   const Rankoptions = {
     hAxis: {
-    title: 'Rank'
+    title: 'ContestID',
+    format : 'decimal'
     },
     vAxis: {
-    title: 'ContestID'
+    title: 'Ranks',
+    format : 'decimal',
+    logScale : 'True'
     }
   };
 
-  const Ratingchart = new google.visualization.LineChart(document.getElementById('chart_div'));
-  Ratingchart.draw(rating, Ratingoptions);
-  const Rankschart = new google.visualization.LineChart(document.getElementById('chart_div1'));
-  Rankschart.draw(ranks, Rankoptions);
+  const Ratingchart = new google.charts.Line(document.getElementById('chart_div'));
+  Ratingchart.draw(rating, google.charts.Line.convertOptions(Ratingoptions));
+  const Rankschart = new google.charts.Line(document.getElementById('chart_div1'));
+  Rankschart.draw(ranks, google.charts.Line.convertOptions(Rankoptions));
 }

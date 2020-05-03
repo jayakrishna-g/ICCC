@@ -1,7 +1,7 @@
 
 
 
-<mat-card *ngIf = 'dataloaded | async' fxFlexfil>
+<mat-card *ngIf = 'dataloaded | async' fxFlexfill>
     <mat-card-header>
         <img mat-card-avatar src="https://picsum.photos/200/300?random=1">
         <mat-card-title>
@@ -15,34 +15,34 @@
     <mat-divider></mat-divider>
     <br>
         <mat-list>
-            <h1 mat-line>User Details</h1>
-            <h3 mat-line>
+            <h2 mat-line>User Details</h2>
+            <mat-list-item >
                     UserName :  {{user.PersonalDetails.Name}}  
-            </h3>
-            <h3 mat-line>
+            </mat-list-item>
+            <mat-list-item >
                     Handle :  {{user.Handle}}  
-            </h3>
-            <h3 mat-line>
+            </mat-list-item>
+            <mat-list-item >
                     College :  {{user.PersonalDetails.College}}  
-            </h3>
-            <h3 mat-line>
+            </mat-list-item>
+            <mat-list-item >
                     Stream :  {{user.PersonalDetails.Stream}}  
-            </h3>
-            <h3 mat-line>
+            </mat-list-item>
+            <mat-list-item  >
                     Batch :  {{user.PersonalDetails.YearofStudy}}  
-            </h3>
+            </mat-list-item>
         </mat-list>
         <mat-divider></mat-divider>
         <br>
         <mat-card-content>
-            <h1>Ratings Graph</h1>
+            <h2>Ratings Graph</h2>
             <div id=chart_div fxFlexfill></div>
         </mat-card-content>
         <br>
         <mat-divider></mat-divider>
         <br>
         <mat-card-content>
-            <h1>Ranks Graph</h1>
+            <h2>Ranks Graph</h2>
             <div id=chart_div1 fxFlexfill></div>
         </mat-card-content>
         <br>
