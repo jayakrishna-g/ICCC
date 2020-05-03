@@ -73,11 +73,7 @@ function drawGraphs() {
         max : RMax,
       }
       },
-      axes: {
-        x: {
-          0: {side: 'bottom'}
-        }
-      }
+      legend : {position :'none'}
   };
   const Rankoptions = {
     hAxis: {
@@ -88,7 +84,9 @@ function drawGraphs() {
     title: 'Ranks',
     format : 'decimal',
     logScale : 'True'
-    }
+    },
+    
+    legend : {position :'none'}
   };
 
   const Ratingchart = new google.charts.Line(document.getElementById('chart_div'));

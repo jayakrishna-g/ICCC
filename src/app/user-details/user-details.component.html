@@ -1,7 +1,4 @@
-
-
-
-<mat-card *ngIf = 'dataloaded | async' fxFlexfill>
+<mat-card *ngIf='dataloaded | async' fxFlexfill>
     <mat-card-header>
         <img mat-card-avatar src="https://picsum.photos/200/300?random=1">
         <mat-card-title>
@@ -14,38 +11,51 @@
     <br>
     <mat-divider></mat-divider>
     <br>
-        <mat-list>
+    <mat-card>
+        <mat-card-subtitle>
             <h2 mat-line>User Details</h2>
-            <mat-list-item >
-                    UserName :  {{user.PersonalDetails.Name}}  
-            </mat-list-item>
-            <mat-list-item >
-                    Handle :  {{user.Handle}}  
-            </mat-list-item>
-            <mat-list-item >
-                    College :  {{user.PersonalDetails.College}}  
-            </mat-list-item>
-            <mat-list-item >
-                    Stream :  {{user.PersonalDetails.Stream}}  
-            </mat-list-item>
-            <mat-list-item  >
-                    Batch :  {{user.PersonalDetails.YearofStudy}}  
-            </mat-list-item>
-        </mat-list>
-        <mat-divider></mat-divider>
-        <br>
+        </mat-card-subtitle>
         <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    UserName : {{user.PersonalDetails.Name}}
+                </mat-list-item>
+                <mat-list-item>
+                    Handle : {{user.Handle}}
+                </mat-list-item>
+                <mat-list-item>
+                    College : {{user.PersonalDetails.College}}
+                </mat-list-item>
+                <mat-list-item>
+                    Stream : {{user.PersonalDetails.Stream}}
+                </mat-list-item>
+                <mat-list-item>
+                    Batch : {{user.PersonalDetails.YearofStudy}}
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <mat-card>
+        <mat-card-subtitle>
             <h2>Ratings Graph</h2>
+        </mat-card-subtitle>
+        <mat-card-content>
             <div id=chart_div fxFlexfill></div>
         </mat-card-content>
-        <br>
-        <mat-divider></mat-divider>
-        <br>
-        <mat-card-content>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card>
+        <mat-card-subtitle>
             <h2>Ranks Graph</h2>
+        </mat-card-subtitle>
+        <mat-card-content>
             <div id=chart_div1 fxFlexfill></div>
         </mat-card-content>
-        <br>
+    </mat-card>
+    <br>
+    <br>
 </mat-card>
 
 <!-- <ng-template #dataloaded>
