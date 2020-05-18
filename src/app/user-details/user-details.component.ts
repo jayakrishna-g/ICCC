@@ -62,7 +62,6 @@ function drawGraphs() {
       hAxis: {
       title: 'ContestID',
       format: 'decimal',
-      minValue : 1200
       },
       vAxis: {
       title: 'Rating',
@@ -72,7 +71,7 @@ function drawGraphs() {
         max : RMax,
       }
       },
-      legend : {position :'none'}
+      legend : {position : 'none'}
   };
   const Rankoptions = {
     hAxis: {
@@ -84,12 +83,25 @@ function drawGraphs() {
     format : 'decimal',
     logScale : 'True'
     },
-    
-    legend : {position :'none'}
+    legend : {position : 'none'}
   };
 
   const Ratingchart = new google.charts.Line(document.getElementById('chart_div'));
   Ratingchart.draw(rating, google.charts.Line.convertOptions(Ratingoptions));
+
+  google.visualization.events.addListener(Ratingchart, 'ready', () => {
+    if (Ratingrows.length === 1) {
+    Ratingchart.setSelection([{row: Ratingrows.length - 1 , column: 1 }]);
+    }
+  });
+
   const Rankschart = new google.charts.Line(document.getElementById('chart_div1'));
   Rankschart.draw(ranks, google.charts.Line.convertOptions(Rankoptions));
+
+  google.visualization.events.addListener(Rankschart, 'ready', () => {
+    if (Ratingrows.length === 1) {
+    Rankschart.setSelection([{row: Ratingrows.length  , column: 1 }]);
+    }
+  });
+
 }

@@ -55,6 +55,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { RatingsComponent } from './ratings/ratings.component';
 import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { CollegeDetailsComponent } from './college-details/college-details.component';
+import { CollegeComponent } from './college/college.component';
  
 
 @NgModule({
@@ -62,7 +64,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     AppComponent,
     RatingsComponent,
     UserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    CollegeDetailsComponent,
+    CollegeComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,14 @@ export class DataService {
     return this.http.get(this.url + route);
   }
 
+  getcollegedetails(route) {
+    return this.http.get(this.url + route);
+  }
+
+  getleaderboard(route) {
+    return this.http.get(this.url + route);
+  }
+
   getrandomfact() {
     return this.http.get('https://type.fit/api/quotes');
   }
