@@ -8,19 +8,20 @@
             Filters
         </mat-card-subtitle>
         <form #form action="./ratings/all" method = "GET">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" style="display: inline-flexbox;">
             <mat-label for="College">College</mat-label>
             <input matInput type="text" name="College" placeholder="Ex. CMRCET">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" style="display: inline-flexbox;padding-left: 1%;">
             <mat-label for="Stream">Stream</mat-label>
             <input matInput type="text" name="Stream" placeholder="Ex. CSE">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" style="display: inline-flexbox;padding-left: 1%;">
             <mat-label for="Batch">Batch</mat-label>
             <input matInput type="text" name="Batch" placeholder="Ex. 2017-2021">
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="form.submit()">Submit</button>
+        <br>
+        <button mat-raised-button color="primary" (click)="form.submit()">Apply</button>
       </form>
   </mat-card>
   <br>
@@ -28,7 +29,7 @@
     <mat-card-subtitle>
       Search
     </mat-card-subtitle>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" style="width: 100%;">
       <mat-label>Search</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. zakiuddin321">
     </mat-form-field>

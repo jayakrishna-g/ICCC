@@ -57,6 +57,7 @@ import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { CollegeDetailsComponent } from './college-details/college-details.component';
 import { CollegeComponent } from './college/college.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
  
 
 @NgModule({
@@ -66,7 +67,8 @@ import { CollegeComponent } from './college/college.component';
     UserComponent,
     UserDetailsComponent,
     CollegeDetailsComponent,
-    CollegeComponent
+    CollegeComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { CollegeComponent } from './college/college.component';
 import { CollegeDetailsComponent } from './college-details/college-details.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'player' , component : UserComponent},
   {path: 'player/:username' , component : UserDetailsComponent},
   {path: 'college' , component : CollegeComponent},
-  {path: 'college/:collegename' , component : CollegeDetailsComponent}
+  {path: 'college/:collegename' , component : CollegeDetailsComponent},
+  {path: 'leaderboard/:leaderboard' , component : LeaderboardComponent}
 ];
 
 @NgModule({
