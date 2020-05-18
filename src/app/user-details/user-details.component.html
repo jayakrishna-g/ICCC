@@ -1,15 +1,27 @@
 <mat-card *ngIf='dataloaded | async' fxFlexfill>
-    <mat-card-header>
-        <img mat-card-avatar src="https://picsum.photos/200/300?random=1">
-        <mat-card-title>
-            {{user.PersonalDetails.Name}}
-        </mat-card-title>
-        <mat-card-subtitle>
-            {{user.Handle}}
-        </mat-card-subtitle>
-    </mat-card-header>
+    <mat-card>
+        <mat-card-header>
+            <img mat-card-avatar src="https://picsum.photos/200/300?random=1">
+            <div>
+                <mat-card-title>
+                    {{user.PersonalDetails.Name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{user.Handle}}
+                </mat-card-subtitle>
+            </div>
+            <span style="flex: 1 1 auto;"></span>
+            <div>
+                <mat-card-title>
+                    Rating : {{user.ContestDetails[user.ContestDetails.length-1].Rating}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Volatility : {{user.ContestDetails[user.ContestDetails.length-1].Volatility}}
+                </mat-card-subtitle>
+            </div>
+        </mat-card-header>
+    </mat-card>
     <br>
-    <mat-divider></mat-divider>
     <br>
     <mat-card>
         <mat-card-subtitle>
@@ -24,6 +36,12 @@
                     Handle : {{user.Handle}}
                 </mat-list-item>
                 <mat-list-item>
+                    RollNumber : {{user.PersonalDetails.RollNumber}}
+                </mat-list-item>
+                <mat-list-item>
+                    TimesPlayed : {{user.ContestDetails.length}}
+                </mat-list-item>
+                <mat-list-item>
                     College : {{user.PersonalDetails.College}}
                 </mat-list-item>
                 <mat-list-item>
@@ -32,6 +50,7 @@
                 <mat-list-item>
                     Batch : {{user.PersonalDetails.YearofStudy}}
                 </mat-list-item>
+                
             </mat-list>
         </mat-card-content>
     </mat-card>

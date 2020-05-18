@@ -20,7 +20,6 @@ export class UserDetailsComponent implements OnInit {
     data: DataService
   ) {
       data.getuserdetails(router.url).subscribe((res) => {
-        console.log(res);
         user = res;
         this.user = res;
         google.charts.load('current', {packages: ['corechart', 'line']});
