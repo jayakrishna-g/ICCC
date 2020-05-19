@@ -58,6 +58,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { CollegeDetailsComponent } from './college-details/college-details.component';
 import { CollegeComponent } from './college/college.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { HomeComponent } from './home/home.component';
+import { ContestComponent } from './contest/contest.component';
+import { ProblemComponent } from './problem/problem.component';
  
 
 @NgModule({
@@ -68,7 +71,10 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     UserDetailsComponent,
     CollegeDetailsComponent,
     CollegeComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    HomeComponent,
+    ContestComponent,
+    ProblemComponent
   ],
   imports: [
     BrowserModule,

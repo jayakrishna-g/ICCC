@@ -1,0 +1,77 @@
+<mat-card *ngIf='dataloaded | async' fxFlexfill>
+    <mat-card>
+        <mat-card-title>
+            Inter College Contests
+        </mat-card-title>
+        <mat-card-subtitle>
+            By : Being Zero
+        </mat-card-subtitle>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card >
+        <mat-card-subtitle>
+            <h2>Statistics</h2>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    TotalParticipations : {{tp}}
+                </mat-list-item>
+                <mat-list-item>
+                    Total Contests Conducted : {{tc}}
+                </mat-list-item>
+                <mat-list-item>
+                    Total Problems : {{tc*5}}
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card fxFlexfill>
+        <mat-card-subtitle>
+            <h2>Participations Graph</h2>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <div id="chart1"></div>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card>
+            <mat-card-subtitle>
+                <h2>Past Contests</h2>
+            </mat-card-subtitle>
+        <mat-card-content>
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+
+                    <ng-container matColumnDef="ContestName">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> ContestName </th>
+                        <td mat-cell *matCellDef="let row"> <strong>{{row.ContestName}}</strong> </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Practice">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Practice </th>
+                        <td mat-cell *matCellDef="let row"> <a mat-raised-button color="primary"
+                                [href]="row.ContestUrl" fxFlexfill>Practice</a> </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Leaderboard">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Leaderboard </th>
+                        <td mat-cell *matCellDef="let row"> <a mat-raised-button color="warn"
+                                [href]="row.LeaderboardUrl" fxFlexfill>Leaderboard</a> </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]"></mat-paginator>
+            </div>
+        </mat-card-content>
+        <br>
+        <br>
+    </mat-card>
+</mat-card>

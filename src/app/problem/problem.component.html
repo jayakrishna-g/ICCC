@@ -1,0 +1,16 @@
+<div *ngIf = 'dataloaded | async' style="height: 100%;">
+    <mat-card>
+            <mat-card-title>
+                {{problem.Name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                Accuracy :{{problem.Accuracy}}
+                <br>
+                Score :{{problem.Score}}
+            </mat-card-subtitle>
+    </mat-card>
+    <br>
+    <mat-card class="myIframe">
+        <iframe [src]="safeUrl" allowtransparency="true" scrolling='yes' frameborder='0'></iframe>
+    </mat-card>
+</div>

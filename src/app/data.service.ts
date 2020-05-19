@@ -13,7 +13,13 @@ export class DataService {
   getuserdetails(route) {
     return this.http.get(this.url + route);
   }
+  getproblemdetails(route) {
+    return this.http.get(this.url + route);
+  }
 
+  getcontestdetails(route) {
+    return this.http.get(this.url + route);
+  }
   getcollegedetails(route) {
     return this.http.get(this.url + route);
   }
