@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  url = 'https://bz-iccc.herokuapp.com/api';
+  url = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
   getratings(route) {
     return this.http.get(this.url + route);

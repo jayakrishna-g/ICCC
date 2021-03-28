@@ -57,11 +57,11 @@ export class LeaderboardComponent implements OnInit {
           Handle: element.Handle,
           ProfileUrl: '/player/' + element.Handle,
           Score: 0,
-          P0: element.Problems[0].Score,
-          P1: element.Problems[1].Score,
-          P2: element.Problems[2].Score,
-          P3: element.Problems[3].Score,
-          P4: element.Problems[4].Score
+          P0: element.Problems[0]?.Score,
+          P1: element.Problems[1]?.Score,
+          P2: element.Problems[2]?.Score,
+          P3: element.Problems[3]?.Score,
+          P4: element.Problems[4]?.Score
         });
       });
       ds.forEach(ele => {
