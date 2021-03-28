@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-  url = 'http://localhost:3000/api';
-  constructor(private http: HttpClient) { }
+  url = 'https://bz-iccc.herokuapp.com/api';
+  constructor(private http: HttpClient) {}
   getratings(route) {
     return this.http.get(this.url + route);
   }
